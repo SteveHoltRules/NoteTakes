@@ -1,4 +1,4 @@
-const { createNewNote, filterByQuery } = require('../../lib/notes');
+const { createNewNote, filterByQuery, deleteNote, findOneNote } = require('../../lib/notes');
 //In the module, animals was an array. In this sample, notes is the whole db and it is not in an array.
 const { notes } = require('../../db/db');
 const router = require('express').Router();
@@ -25,6 +25,18 @@ router.post("/notes", (req, res) => {
   //   const note = createNewNotes(req.body, notes);
   //   res.json(note);
   // }
+  res.json(note);
+});
+
+router.get(`/notes/:id`, (req, res) => {
+  const chosen = req.params.id;
+  let note = findOneNote(notes[chosen]);
+  res.json(note);
+})
+
+router.delete("/notes/:id", (req, res) => {
+  console.log("In delete Route: req.params.id", req.params.id);
+  const note = deleteNote(req.params.id, notes);
   res.json(note);
 });
 

@@ -6,3 +6,4 @@ Step 1 - Create post routes to api
 Step 2 - link post routes to html
   Link the server file
 Step 3 - Create delete routes
+  It is console logging response, but not responding with the route on the get trial
