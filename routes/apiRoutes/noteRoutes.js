@@ -1,4 +1,4 @@
-const { createNewNote } = require('../../lib/notes');
+const { createNewNote, filterByQuery } = require('../../lib/notes');
 //In the module, animals was an array. In this sample, notes is the whole db and it is not in an array.
 const { notes } = require('../../db/db');
 const router = require('express').Router();
